@@ -8,7 +8,7 @@ import os
 # ------------------------------
 @st.cache_resource
 def load_model():
-    model_path = r"C:\Users\princ\Documents\nareshit\EDA_sessions\Telecom_churn_streamlit\telecom_churn_model.pkl"  # relative path in the same folder
+    model_path = r"telecom_churn_model.pkl"  # relative path in the same folder
     if not os.path.exists(model_path):
         st.error(f"Model file not found: {model_path}")
         st.stop()
@@ -65,3 +65,4 @@ if st.button("Predict Churn"):
         st.error(f"The customer is likely to churn! (Probability: {probability:.2f})")
     else:
         st.success(f"The customer is not likely to churn. (Probability: {probability:.2f})")
+
